@@ -119,7 +119,7 @@ module.exports = {
     // 禁止出现多行空行
     "no-multiple-empty-lines": "warn",
     // 禁止出现;
-    semi: ["warn", "never"],
+    // semi: ["warn", "never"],
     // 强制在块之前使用一致的空格
     "space-before-blocks": "warn",
     // 强制在 function的左括号之前使用一致的空格
