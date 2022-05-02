@@ -1,23 +1,22 @@
-<script setup lang="ts"></script>
 
 <template>
-  <h1>这里是欢迎页面</h1>
+  <div class="container">
+    <h1>这里是欢迎页面</h1>
+    <h2>GUCCI</h2>
+    <div class="test">
+      <h3>你好</h3>
+    </div>
+  </div>
+
 </template>
+<script setup lang="ts"></script>
 
-<style scoped>
-a {
-  color: #42b983;
-}
+<style scoped lang="less">
+.container {
+  background-color: gold;
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+  .test {
+    background-color: red;
+  }
 }
 </style>
