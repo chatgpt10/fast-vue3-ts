@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
     <h1>这里是欢迎页面</h1>
@@ -8,10 +7,8 @@
       <h4>less全局变量</h4>
     </div>
   </div>
-
 </template>
 <script setup lang="ts"></script>
-
 <style scoped lang="less">
 .container {
   background-color: gold;
@@ -21,8 +18,8 @@
   }
 
   h4 {
-    background-color: @mainColor;
     color: rgb(67, 67, 67);
+    background-color: @maincolor;
   }
 }
 </style>

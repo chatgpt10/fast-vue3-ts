@@ -153,4 +153,13 @@ module.exports = {
     defineExpose: "readonly",
     withDefaults: "readonly",
   },
+  overrides: [
+    {
+      // files: ["src/**/**/*.vue"],
+      rules: {
+        // 取消 组件名只能是单个单词的限制
+        "vue/multi-word-component-names": 0,
+      },
+    },
+  ],
 };
