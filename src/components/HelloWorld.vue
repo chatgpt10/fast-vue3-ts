@@ -5,6 +5,7 @@
     <h2>GUCCI</h2>
     <div class="test">
       <h3>你好</h3>
+      <h4>less全局变量</h4>
     </div>
   </div>
 
@@ -17,6 +18,11 @@
 
   .test {
     background-color: red;
+  }
+
+  h4 {
+    background-color: @mainColor;
+    color: rgb(67, 67, 67);
   }
 }
 </style>

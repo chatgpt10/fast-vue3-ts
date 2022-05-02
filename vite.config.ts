@@ -14,10 +14,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  // 配置less 
   css:{
     preprocessorOptions:{
       less: {
         javascriptEnabled:true,
+        // 配置less 全局变量
+        additionalData:'@import "@/assets/styles/index.less";',
       }
     }
   }
