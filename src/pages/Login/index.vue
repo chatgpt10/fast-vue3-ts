@@ -2,7 +2,7 @@
   <div class="Container">
     <div class="logo">
       <div class="round1">
-        <div class="findWord">FAST VUE3 TS...</div>
+        <div class="findWord">{{ store.ProjectName }}</div>
       </div>
       <div class="round2"></div>
       <div class="round3">
@@ -13,7 +13,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import { mainStore } from "@/store/index";
+const store = mainStore();
+</script>
 
 <style scoped lang="less">
 .Container {
