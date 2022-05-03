@@ -5,4 +5,13 @@ import router from "./router/router";
 // 状态管理器  Pinia
 import { createPinia } from "pinia";
 const pinia = createPinia();
-createApp(App).use(router).use(pinia).mount("#app");
+// UI库 ardo.design
+import ArcoVue from "@arco-design/web-vue";
+import "@arco-design/web-vue/dist/arco.css";
+createApp(App)
+  .use(router)
+  .use(pinia)
+  .use(ArcoVue, {
+    componentPrefix: "arco",
+  })
+  .mount("#app");

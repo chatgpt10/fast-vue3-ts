@@ -6,10 +6,18 @@ import vue from "@vitejs/plugin-vue";
 
 // 配置别名
 import path from "path";
+import Components from "unplugin-vue-components/vite";
+import { ArcoResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [ArcoResolver()],
+    }),
+  ],
+  // plugins: [vue()],
   resolve: {
     // 配置别名
     alias: {

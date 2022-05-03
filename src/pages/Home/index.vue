@@ -7,6 +7,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 <template>
   <div>
     <h1>你好</h1>
+    <a-button type="primary">Primary</a-button>
   </div>
   <div></div>
   <img alt="Vue logo" src="@/assets/logo.png" />
