@@ -19,7 +19,6 @@
 
   h4 {
     color: rgb(67, 67, 67);
-    background-color: @maincolor;
   }
 }
 </style>

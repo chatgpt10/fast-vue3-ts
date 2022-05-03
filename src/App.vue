@@ -1,9 +1,6 @@
 <template>
   <router-view></router-view>
 </template>
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style>
-</style>
+<style></style>
