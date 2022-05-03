@@ -44,4 +44,12 @@ export default defineConfig({
     host: "0.0.0.0", // IP配置，支持从IP启动
     proxy: {},
   },
+  build: {
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+  },
 });
