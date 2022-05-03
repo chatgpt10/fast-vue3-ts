@@ -14,4 +14,4 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 ## Problems encountered
 
-安装unplugin-vue-components 后全局报错,很多依赖丢失。
+安装 unplugin-vue-components 后全局报错,很多依赖丢失。
