@@ -9,13 +9,44 @@
         <!-- Vue3 Vite TS -->
       </div>
     </div>
-    <div class="loginFrom"></div>
+    <!-- 登陆表单 -->
+    <div class="loginFrom">
+      <a-form :model="form" :style="{ width: '310px' }" @submit="handleSubmit">
+        <a-form-item field="name" label="账号">
+          <a-input v-model="form.name" placeholder="请输入账号" />
+        </a-form-item>
+        <a-form-item field="post" label="密码">
+          <a-input v-model="form.post" placeholder="请输入密码" />
+        </a-form-item>
+        <a-form-item field="isRead">
+          <a-checkbox v-model="form.isRead">
+            同意用户协议
+          </a-checkbox>
+        </a-form-item>
+        <a-form-item>
+          <a-button html-type="submit">登录</a-button>
+        </a-form-item>
+        <a-form-item>
+          <span class="remind">*此处使用的UI框架是ArcoDesign</span>
+        </a-form-item>
+      </a-form>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { reactive } from "vue";
 import { mainStore } from "@/store/index";
 const store = mainStore();
+const form = reactive({
+  name: "",
+  post: "",
+  isRead: false,
+});
+// 登陆按钮
+function handleSubmit() {
+  console.log("登陆");
+}
 </script>
 
 <style scoped lang="less">
@@ -75,6 +106,21 @@ const store = mainStore();
 
     100% {
       transform: rotate(360deg);
+    }
+  }
+
+  .loginFrom {
+    float: right;
+    padding: 20px;
+    margin: 200px;
+    width: 400px;
+    height: 230px;
+    background-color: #f0960eb4;
+    border-radius: 10px;
+
+    .remind {
+      color: rgb(116, 115, 115);
+      font-size: 12px;
     }
   }
 }
