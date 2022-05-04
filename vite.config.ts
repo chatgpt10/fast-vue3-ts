@@ -7,14 +7,36 @@ import vue from "@vitejs/plugin-vue";
 // 配置别名
 import path from "path";
 import Components from "unplugin-vue-components/vite";
+// UI库
 import { ArcoResolver } from "unplugin-vue-components/resolvers";
+// svg封装插件
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     Components({
+      // UI库
       resolvers: [ArcoResolver()],
+    }),
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
+      // 指定symbolId格式
+      symbolId: "icon-[dir]-[name]",
+
+      /**
+       * 自定义插入位置
+       * @default: body-last
+       */
+      // inject?: 'body-last' | 'body-first'
+
+      /**
+       * custom dom id
+       * @default: __svg__icons__dom__
+       */
+      // customDomId: '__svg__icons__dom__',
     }),
   ],
   // plugins: [vue()],

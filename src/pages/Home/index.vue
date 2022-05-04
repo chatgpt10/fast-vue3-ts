@@ -12,6 +12,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
   <div></div>
   <img alt="Vue logo" src="@/assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <SvgIcon name="heSuan" />
   router
 </template>
 
