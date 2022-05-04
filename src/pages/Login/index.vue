@@ -22,7 +22,7 @@
           <a-checkbox v-model="isRead"> 同意用户协议 </a-checkbox>
         </a-form-item>
         <a-form-item>
-          <a-button html-type="submit">登录</a-button>
+          <a-button html-type="submit" :disabled="!isRead">登录</a-button>
         </a-form-item>
         <a-form-item>
           <span class="remind">*此处使用的UI框架是ArcoDesign</span>
@@ -36,6 +36,8 @@
 import { reactive, ref } from "vue";
 import { mainStore } from "@/store/index";
 import { loginApi } from "@/api/user";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const store = mainStore();
 const form = reactive({
   username: "admin",
@@ -45,7 +47,7 @@ const isRead = ref(false);
 // 登陆按钮
 async function handleSubmit() {
   await loginApi.login(form);
-  console.log("登陆", form);
+  router.push("/");
 }
 </script>
 
