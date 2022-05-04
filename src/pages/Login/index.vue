@@ -12,16 +12,14 @@
     <!-- 登陆表单 -->
     <div class="loginFrom">
       <a-form :model="form" :style="{ width: '310px' }" @submit="handleSubmit">
-        <a-form-item field="name" label="账号">
-          <a-input v-model="form.name" placeholder="请输入账号" />
+        <a-form-item field="username" label="账号">
+          <a-input v-model="form.username" placeholder="请输入账号" />
         </a-form-item>
-        <a-form-item field="post" label="密码">
-          <a-input v-model="form.post" placeholder="请输入密码" />
+        <a-form-item field="password" label="密码">
+          <a-input-password v-model="form.password" placeholder="请输入密码" />
         </a-form-item>
         <a-form-item field="isRead">
-          <a-checkbox v-model="form.isRead">
-            同意用户协议
-          </a-checkbox>
+          <a-checkbox v-model="isRead"> 同意用户协议 </a-checkbox>
         </a-form-item>
         <a-form-item>
           <a-button html-type="submit">登录</a-button>
@@ -35,17 +33,19 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { mainStore } from "@/store/index";
+import { loginApi } from "@/api/user";
 const store = mainStore();
 const form = reactive({
-  name: "",
-  post: "",
-  isRead: false,
+  username: "admin",
+  password: "123456",
 });
+const isRead = ref(false);
 // 登陆按钮
-function handleSubmit() {
-  console.log("登陆");
+async function handleSubmit() {
+  await loginApi.login(form);
+  console.log("登陆", form);
 }
 </script>
 

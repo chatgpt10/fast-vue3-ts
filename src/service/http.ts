@@ -5,7 +5,9 @@ import NProgress from "nprogress";
 // 配置核心文件~~
 
 // 基准地址
-axios.defaults.baseURL = "/api";
+// axios.defaults.baseURL = "/api";
+axios.defaults.baseURL =
+  "https://console-mock.apipost.cn/app/mock/project/811bc94e-011e-4b6b-e2a0-d963f1fd0dd3";
 // 请求超时时间
 axios.defaults.timeout = 5000;
 // 请求头
