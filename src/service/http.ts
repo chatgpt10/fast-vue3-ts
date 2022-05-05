@@ -2,6 +2,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 // loading 效果
 import NProgress from "nprogress";
+import "nprogress/nprogress.css"; //这个样式必须引入
 // 配置核心文件~~
 
 // 基准地址
@@ -54,6 +55,7 @@ const http: Http = {
   get(url, params) {
     return new Promise((resolve, reject) => {
       NProgress.start();
+      console.log("NProgress");
       axios
         .get(url, { params })
         .then((res) => {
@@ -68,6 +70,7 @@ const http: Http = {
   },
   post(url, params) {
     return new Promise((resolve, reject) => {
+      console.log("NProgress");
       NProgress.start();
       axios
         .post(url, JSON.stringify(params))
