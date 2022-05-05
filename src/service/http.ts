@@ -3,6 +3,8 @@ import axios, { AxiosRequestConfig } from "axios";
 // loading 效果
 import NProgress from "nprogress";
 import "nprogress/nprogress.css"; //这个样式必须引入
+// 引入token相关文件
+import { getToken, TokenPrefix } from "@/utils/auth";
 // 配置核心文件~~
 
 // 基准地址
@@ -17,12 +19,13 @@ axios.defaults.headers.post["Content-Type"] = "application/json;charset=UTF-8";
 axios.interceptors.request.use(
   (config): AxiosRequestConfig<any> => {
     // 获取本地token
-    const token = window.localStorage.getItem("token");
+    const token = getToken();
     // 有token直接放行
     if (token) {
       //@ts-ignore
-      config.headers.token = token;
+      config.headers.Authorization = `${TokenPrefix} ${token}`;
     }
+
     return config;
   },
   (error) => {
