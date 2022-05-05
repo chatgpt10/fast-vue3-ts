@@ -6,3 +6,7 @@ export interface UserState {
   avatar?: string;
   token?: string;
 }
+export interface LoginData {
+  username: string;
+  password: string;
+}

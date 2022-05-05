@@ -2,7 +2,7 @@
   <div class="Container">
     <div class="logo">
       <div class="round1">
-        <div class="findWord">{{ store.ProjectName }}</div>
+        <!-- <div class="findWord">{{ store.ProjectName }}</div> -->
       </div>
       <div class="round2"></div>
       <div class="round3">
@@ -34,11 +34,13 @@
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import { mainStore } from "@/store/index";
-import { loginApi } from "@/api/user";
+import { useUserStore } from "@/store/index";
 import { useRouter } from "vue-router";
+// 消息提示
+import { Message } from "@arco-design/web-vue";
+// import { IconFaceSmileFill } from "@arco-design/web-vue/es/icon";
 const router = useRouter();
-const store = mainStore();
+const useStore = useUserStore();
 const form = reactive({
   username: "admin",
   password: "123456",
@@ -46,8 +48,13 @@ const form = reactive({
 const isRead = ref(false);
 // 登陆按钮
 async function handleSubmit() {
-  await loginApi.login(form);
-  router.push("/");
+  try {
+    await useStore.login(form);
+    router.push("/");
+    Message.success("登录成功,欢迎使用!");
+  } catch (e) {
+    console.log(e);
+  }
 }
 </script>
 
