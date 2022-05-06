@@ -1,10 +1,7 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "@/components/HelloWorld.vue";
-</script>
-
 <template>
+  <a-avatar :size="204">
+    <img alt="avatar" :src="avatarUrl" />
+  </a-avatar>
   <div>
     <h1>你好</h1>
     <a-button type="primary">Primary</a-button>
@@ -15,6 +12,16 @@ import HelloWorld from "@/components/HelloWorld.vue";
   <SvgIcon name="heSuan" />
   router
 </template>
+<script setup lang="ts">
+import HelloWorld from "@/components/HelloWorld.vue";
+// 引入pinia
+import { useUserStore } from "@/store";
+const useUser = useUserStore();
+const avatarUrl = useUser.$state.avatar;
+console.log("avatarUrl", avatarUrl);
+
+console.log(useUser.$state);
+</script>
 
 <style>
 #app {
