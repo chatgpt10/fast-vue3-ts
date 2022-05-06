@@ -5,6 +5,9 @@ import router from "./router/router";
 // 状态管理器  Pinia
 import { createPinia } from "pinia";
 const pinia = createPinia();
+/// Pinia 数据持久化
+import piniaPersist from "pinia-plugin-persist";
+pinia.use(piniaPersist);
 // UI库 ardo.design
 import ArcoVue from "@arco-design/web-vue";
 import "@arco-design/web-vue/dist/arco.css";

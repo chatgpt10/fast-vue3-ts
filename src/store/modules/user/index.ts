@@ -30,4 +30,13 @@ export const useUserStore = defineStore("user", {
       return data;
     },
   },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        key: "FastVue3Ts_user",
+        storage: localStorage,
+      },
+    ],
+  },
 });
