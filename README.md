@@ -2,20 +2,16 @@
 
 # Vue3 + Typescript + Vite2.X + Pinia + Router4.0
 
-# 使用ApiPost6进行Mock
+# 使用 ApiPost6 进行 Mock
 
-账号1:{
-    username:admin,
-    password:123456
+账号 1:{
+username:admin,
+password:123456
 }
-账号2:{
-    username:admin2,
-    password:123456
+账号 2:{
+username:admin2,
+password:123456
 }
-
-
-
-
 
 ## Problems encountered
 
