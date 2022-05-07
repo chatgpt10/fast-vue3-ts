@@ -13,7 +13,9 @@
         <template #title>Home</template>
         <home />
       </a-tab-pane>
-      <a-tab-pane key="2" title="Tab 2"> Content of Tab Panel 2 </a-tab-pane>
+      <a-tab-pane key="2" title="Tab 2">
+        <warther />
+      </a-tab-pane>
       <a-tab-pane key="3">
         <template #title>Tab 3</template>
         <SvgIcon name="heSuan" />
@@ -23,6 +25,7 @@
 </template>
 <script setup lang="ts">
 import home from "./components/home/index.vue";
+import warther from "@/components/weather/index.vue";
 import { useUserStore } from "@/store";
 const useUser = useUserStore();
 const avatarUrl = useUser.$state.avatar;
