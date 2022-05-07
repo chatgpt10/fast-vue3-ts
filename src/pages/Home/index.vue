@@ -1,8 +1,11 @@
 <template>
   <div class="navTop">
-    <a-avatar :size="60">
-      <img alt="avatar" :src="avatarUrl" />
-    </a-avatar>
+    <div class="userInfo">
+      <a-avatar :size="60">
+        <img alt="avatar" :src="avatarUrl" />
+      </a-avatar>
+      <span style="margin-left: 10px">{{ useUser.$state.username }}</span>
+    </div>
   </div>
   <div class="container">
     <a-tabs default-active-key="2" type="rounded">
@@ -43,9 +46,13 @@ console.log(useUser.$state);
   /*
   background-color: pink;
   */
+  display: flex;
+  justify-content: flex-end;
 
-  .arco-avatar {
-    float: right;
+  .userInfo {
+    background-color: gold;
+    width: 300px;
+    border-radius: 50px 10px 10px 50px;
   }
 }
 
