@@ -6,7 +6,7 @@
       </a-avatar>
       <span style="margin-left: 10px">{{ useUser.$state.username }}</span>
       <Weather />
-      <div class="round"></div>
+      <div class="logout">Logout</div>
     </div>
   </div>
   <div class="container">
@@ -64,6 +64,24 @@ const avatarUrl = useUser.$state.avatar;
     align-items: center;
     position: relative;
     cursor: pointer;
+
+    .logout {
+      width: 160px;
+      background-color: #b9b8b480;
+      position: absolute;
+      height: 60px;
+      top: 0;
+      left: 20px;
+      z-index: -1;
+      border-radius: 10px;
+      transition: left 1s;
+    }
+
+    &:hover {
+      .logout {
+        left: -134px;
+      }
+    }
   }
 }
 
