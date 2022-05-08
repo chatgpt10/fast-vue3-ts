@@ -9,8 +9,9 @@ import { getToken, TokenPrefix } from "@/utils/auth";
 
 // 基准地址
 // axios.defaults.baseURL = "/api";
-axios.defaults.baseURL =
-  "https://console-mock.apipost.cn/app/mock/project/811bc94e-011e-4b6b-e2a0-d963f1fd0dd3";
+// axios.defaults.baseURL =
+//   "https://console-mock.apipost.cn/app/mock/project/811bc94e-011e-4b6b-e2a0-d963f1fd0dd3";
+axios.defaults.baseURL = import.meta.env.BASE_URL + "";
 // 请求超时时间
 axios.defaults.timeout = 5000;
 // 请求头

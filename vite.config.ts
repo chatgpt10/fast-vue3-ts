@@ -64,15 +64,14 @@ export default defineConfig({
     open: false, // 类型： boolean | string在服务器启动时自动在浏览器中打开应用程序；
     cors: true, // 类型： boolean | CorsOptions 为开发服务器配置 CORS。默认启用并允许任何源
     host: "0.0.0.0", // IP配置，支持从IP启动
-    // proxy: {
-    //   "^/api/.*": {
-    //     //路径重写
-    //     target:
-    //       "https://console-mock.apipost.cn/app/mock/project/811bc94e-011e-4b6b-e2a0-d963f1fd0dd3/4",
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace(/^\/api/, ""),
-    //   },
-    // },
+    proxy: {
+      "/api": {
+        target:
+          "https://console-mock.apipost.cn/app/mock/project/811bc94e-011e-4b6b-e2a0-d963f1fd0dd3",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
   build: {
     terserOptions: {
