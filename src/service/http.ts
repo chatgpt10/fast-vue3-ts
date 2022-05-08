@@ -47,6 +47,7 @@ interface ResType<T> {
   data?: T;
   msg: string;
   err?: string;
+  lives?: any;
 }
 interface Http {
   get<T>(url: string, params?: unknown): Promise<ResType<T>>;
@@ -59,7 +60,7 @@ const http: Http = {
   get(url, params) {
     return new Promise((resolve, reject) => {
       NProgress.start();
-      console.log("NProgress");
+      // console.log("NProgress");
       axios
         .get(url, { params })
         .then((res) => {

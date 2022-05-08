@@ -7,4 +7,10 @@ export const loginApi: T.ILoginApi = {
     return http.post("/api/login", params);
   },
 };
+// 高德天气Api
+export const getWeatherApi = {
+  getWeather() {
+    return http.get("/gd");
+  },
+};
 // export default loginApi;

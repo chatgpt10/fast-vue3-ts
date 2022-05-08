@@ -29,8 +29,8 @@ import warther from "@/components/weather/index.vue";
 import { useUserStore } from "@/store";
 const useUser = useUserStore();
 const avatarUrl = useUser.$state.avatar;
-console.log("avatarUrl", avatarUrl);
-console.log(useUser.$state);
+// console.log("avatarUrl", avatarUrl);
+// console.log(useUser.$state);
 </script>
 
 <style scoped lang="less">
