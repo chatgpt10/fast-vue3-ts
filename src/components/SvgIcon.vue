@@ -17,7 +17,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "#333",
+    default: "#ffd700",
   },
   size: {
     type: String,
@@ -30,7 +30,7 @@ const calsses = computed(() => {
     [`sdms-size-${props.size}`]: props.size,
   };
 });
-const fontSize = reactive({ default: "32px", small: "20px", large: "48px" });
+const fontSize = reactive({ default: "46px", small: "20px", large: "48px" });
 </script>
 <style lang="less" scoped>
 .svg-icon-spin {

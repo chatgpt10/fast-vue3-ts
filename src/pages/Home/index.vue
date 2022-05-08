@@ -5,6 +5,8 @@
         <img alt="avatar" :src="avatarUrl" />
       </a-avatar>
       <span style="margin-left: 10px">{{ useUser.$state.username }}</span>
+      <Weather />
+      <div class="round"></div>
     </div>
   </div>
   <div class="container">
@@ -14,7 +16,7 @@
         <home />
       </a-tab-pane>
       <a-tab-pane key="2" title="Tab 2">
-        <warther />
+        <h3>东风破</h3>
       </a-tab-pane>
       <a-tab-pane key="3">
         <template #title>Tab 3</template>
@@ -25,7 +27,7 @@
 </template>
 <script setup lang="ts">
 import home from "./components/home/index.vue";
-import warther from "@/components/weather/index.vue";
+import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
 const useUser = useUserStore();
 const avatarUrl = useUser.$state.avatar;
@@ -54,8 +56,14 @@ const avatarUrl = useUser.$state.avatar;
 
   .userInfo {
     background-color: gold;
-    width: 300px;
+    width: 500px;
     border-radius: 50px 10px 10px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
   }
 }
 

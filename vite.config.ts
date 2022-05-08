@@ -71,6 +71,7 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
+      // 调用高德天气插件
       "/gd": {
         target:
           "https://restapi.amap.com/v3/weather/weatherInfo?city=310115&key=556446c31b8ed3d4c948aaf74904a788",
