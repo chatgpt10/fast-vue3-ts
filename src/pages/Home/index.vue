@@ -4,11 +4,7 @@
       <!-- <a-avatar :size="60">
         <img alt="avatar" :src="avatarUrl" />
       </a-avatar> -->
-      <span
-        style="margin-left: 60px; color: #165dff; font-weight: 600"
-        @click="btnName"
-        >退出登录</span
-      >
+      <span style="margin-left: 60px; color: #165dff; font-weight: 600" @click="btnLogout">退出登录</span>
       <Weather />
       <div class="userName">
         <a-avatar :size="60">
@@ -38,12 +34,17 @@
 import home from "./components/home/index.vue";
 import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
+import { useRouter } from "vue-router";
 const useUser = useUserStore();
+const router = useRouter();
 const avatarUrl = useUser.$state.avatar;
 // console.log("avatarUrl", avatarUrl);
 // console.log(useUser.$state);
-function btnName() {
+// 退出登录
+function btnLogout() {
   console.log("name");
+  useUser.logout();
+  router.push("/login");
 }
 </script>
 

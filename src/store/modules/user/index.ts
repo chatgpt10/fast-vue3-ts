@@ -16,7 +16,11 @@ export const useUserStore = defineStore("user", {
     // 设置用户信息
     setUserInfo(partial: Partial<UserState>) {
       this.$patch(partial);
-      console.log(this.$state);
+      // console.log(this.$state);
+    },
+    // 清除用户信息
+    resetInfo() {
+      this.$reset();
     },
     // 异步登陆实现token存储
     async login(loginForm: LoginData) {
@@ -28,6 +32,11 @@ export const useUserStore = defineStore("user", {
         this.setUserInfo(data.userInfo);
       }
       return data;
+    },
+    // 退出登录清除token
+    logout() {
+      this.resetInfo();
+      clearToken();
     },
   },
   persist: {

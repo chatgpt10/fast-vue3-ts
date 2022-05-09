@@ -43,7 +43,7 @@ const router = useRouter();
 const useStore = useUserStore();
 const form = reactive({
   username: "admin",
-  password: "123456",
+  password: "123456!!",
 });
 const isRead = ref(false);
 // 登陆按钮
