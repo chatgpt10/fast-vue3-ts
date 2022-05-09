@@ -6,11 +6,11 @@
 
 账号 1:{
 username:admin,
-password:123456
+password:123456!!
 }
 账号 2:{
 username:admin2,
-password:123456
+password:123456!!
 }
 
 ## Problems encountered
