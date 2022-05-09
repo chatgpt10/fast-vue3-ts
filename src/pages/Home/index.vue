@@ -4,7 +4,11 @@
       <!-- <a-avatar :size="60">
         <img alt="avatar" :src="avatarUrl" />
       </a-avatar> -->
-      <span style="margin-left: 60px; color: #165dff; font-weight: 600" @click="btnLogout">退出登录</span>
+      <span
+        style="margin-left: 60px; color: #165dff; font-weight: 600"
+        @click="btnLogout"
+        >退出登录</span
+      >
       <Weather />
       <div class="userName">
         <a-avatar :size="60">

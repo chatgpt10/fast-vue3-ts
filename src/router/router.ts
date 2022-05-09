@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-
+import { isLogin } from "@/utils/auth";
+import { Message } from "@arco-design/web-vue";
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
@@ -16,6 +17,21 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  // eslint-disable-next-line eqeqeq
+  if (to.path == "/login" || to.path == "/register") {
+    next();
+  } else {
+    // eslint-disable eqeqeq
+    if (isLogin()) {
+      next();
+    } else {
+      next("/login");
+      Message.warning("Token失效,请重新登录!");
+    }
+  }
 });
 
 export default router;
