@@ -4,11 +4,7 @@
       <!-- <a-avatar :size="60">
         <img alt="avatar" :src="avatarUrl" />
       </a-avatar> -->
-      <span
-        style="margin-left: 60px; color: #165dff; font-weight: 600"
-        @click="btnLogout"
-        >退出登录</span
-      >
+      <span style="margin-left: 60px; color: #165dff; font-weight: 600" @click="btnLogout">退出登录</span>
       <Weather />
       <div class="userName">
         <a-avatar :size="60">
@@ -19,7 +15,7 @@
     </div>
   </div>
   <div class="container">
-    <a-tabs default-active-key="2" type="rounded">
+    <a-tabs default-active-key="1" type="rounded">
       <a-tab-pane key="1" title="Tab 1">
         <template #title>Home</template>
         <home />
