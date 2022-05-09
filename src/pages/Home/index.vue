@@ -1,12 +1,21 @@
 <template>
   <div class="navTop">
     <div class="userInfo">
-      <a-avatar :size="60">
+      <!-- <a-avatar :size="60">
         <img alt="avatar" :src="avatarUrl" />
-      </a-avatar>
-      <span style="margin-left: 10px">{{ useUser.$state.username }}</span>
+      </a-avatar> -->
+      <span
+        style="margin-left: 60px; color: #165dff; font-weight: 600"
+        @click="btnName"
+        >退出登录</span
+      >
       <Weather />
-      <div class="logout">Logout</div>
+      <div class="userName">
+        <a-avatar :size="60">
+          <img alt="avatar" :src="avatarUrl" />
+        </a-avatar>
+        <span style="margin-left: 10px">{{ useUser.$state.username }}</span>
+      </div>
     </div>
   </div>
   <div class="container">
@@ -33,6 +42,9 @@ const useUser = useUserStore();
 const avatarUrl = useUser.$state.avatar;
 // console.log("avatarUrl", avatarUrl);
 // console.log(useUser.$state);
+function btnName() {
+  console.log("name");
+}
 </script>
 
 <style scoped lang="less">
@@ -65,21 +77,20 @@ const avatarUrl = useUser.$state.avatar;
     position: relative;
     cursor: pointer;
 
-    .logout {
+    .userName {
       width: 160px;
-      background-color: #b9b8b480;
+      background-color: gold;
       position: absolute;
       height: 60px;
       top: 0;
-      left: 20px;
-      z-index: -1;
-      border-radius: 10px;
+      left: 1px;
+      border-radius: 30px;
       transition: left 1s;
     }
 
     &:hover {
-      .logout {
-        left: -134px;
+      .userName {
+        left: -110px;
       }
     }
   }
