@@ -22,10 +22,10 @@ import { ref, reactive } from "vue";
 const props = defineProps({
   cardInfoData: {
     type: Object,
-    default: null, 
+    default: null,
   },
 });
-console.log(props.cardInfoData);
+// console.log(props.cardInfoData);
 </script>
 <style scoped lang="less">
 .infoDescriptionCard {
