@@ -44,6 +44,7 @@ const avatarUrl = useUser.$state.avatar;
 function btnLogout() {
   console.log("name");
   useUser.logout();
+  // 路由跳转
   router.push("/login");
 }
 </script>
