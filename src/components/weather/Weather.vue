@@ -1,6 +1,7 @@
 <template>
   <div class="weatherContainer">
     <SvgIcon :name="weatherName" />
+    <!-- <SvgIcon name="yin" /> -->
     {{ weatherData.city }}
     {{ weatherData.reporttime }}
     {{ weatherData.weather }}
@@ -34,14 +35,15 @@ async function getWeather() {
 getWeather();
 let weatherName = ref("qing");
 function getWeatherName() {
+  console.log(weatherData.weather);
+
   if (weatherData.weather == "晴") {
     weatherName.value = "qing";
   } else if (weatherData.weather == "多云") {
     weatherName.value = "duoyun";
-    // eslint-disable-next-line no-constant-condition
-  } else if (weatherData.weather === "大雨" || "小雨" || "中雨") {
+  } else if (weatherData.weather === "大雨") {
     weatherName.value = "dayu";
-  } else if (weatherData.weather === "阴天") {
+  } else if (weatherData.weather === "阴") {
     weatherName.value = "yin";
   } else {
     weatherName.value = "wumai";
