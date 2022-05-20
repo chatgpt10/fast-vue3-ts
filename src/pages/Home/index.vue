@@ -35,6 +35,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ref } from "vue";
 import home from "./components/home/index.vue";
 import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";

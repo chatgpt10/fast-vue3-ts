@@ -12,6 +12,11 @@ const routes: RouteRecordRaw[] = [
     name: "Login",
     component: () => import("@/pages/Login/index.vue"), // 注意这里要带上 文件后缀.vue
   },
+  {
+    path: "/test",
+    name: "Test",
+    component: () => import("@/pages/Test/index.vue"), // 注意这里要带上 文件后缀.vue
+  },
 ];
 
 const router = createRouter({

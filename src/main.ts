@@ -14,6 +14,8 @@ import "@arco-design/web-vue/dist/arco.css";
 // svg封装插件
 import SvgIcon from "@/components/SvgIcon.vue";
 import "virtual:svg-icons-register";
+// 动画文件
+import "animate.css";
 createApp(App)
   .use(router)
   .use(pinia)
