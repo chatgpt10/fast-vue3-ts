@@ -3,8 +3,8 @@
     显示与隐藏
   </button>
   <br />
-  <transition>
-    <hello-world v-if="helloWorldShow" msg="【一碗周】过渡动画演示demo" />
+  <transition name="fade">
+    <hello-world v-if="helloWorldShow" />
   </transition>
 </template>
 
@@ -16,10 +16,10 @@ const helloWorldShow = ref(true);
 
 <style scoped lang="less">
 /* 离开和进入过程中的样式 */
-.v-enter-active {
+.fade-enter-active {
   animation: pulse 1.5s;
 }
-.v-leave-active {
-  animation: pulse 1.5s;
+.fade-leave-active {
+  animation: zoomOutDown 1.5s;
 }
 </style>

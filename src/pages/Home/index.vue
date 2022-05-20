@@ -19,10 +19,12 @@
     </div>
   </div>
   <div class="container">
-    <a-tabs default-active-key="1" type="rounded">
+    <a-tabs default-active-key="1" type="rounded" @tab-click="TabClick">
       <a-tab-pane key="1" title="Tab 1">
         <template #title>Home</template>
-        <home />
+        <Transition name="fade" :appear="true">
+          <home v-show="transitionHome" />
+        </Transition>
       </a-tab-pane>
       <a-tab-pane key="2" title="Tab 2">
         <h3>东风破</h3>
@@ -51,6 +53,15 @@ function btnLogout() {
   useUser.logout();
   // 路由跳转
   router.push("/login");
+}
+let transitionHome = ref(true);
+function TabClick(e) {
+  if (e == 1) {
+    transitionHome.value = true;
+    console.log(transitionHome.value);
+  } else {
+    transitionHome.value = false;
+  }
 }
 </script>
 
@@ -146,5 +157,9 @@ function btnLogout() {
   div {
     background-color: var(--color-primary-light-4);
   }
+}
+/* 离开和进入过程中的样式 */
+.fade-enter-active {
+  animation: bounceInLeft 2.5s;
 }
 </style>
