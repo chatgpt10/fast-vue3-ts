@@ -5,14 +5,15 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    404: typeof import('./src/components/errorPages/404.vue')['default']
     AAvatar: typeof import('@arco-design/web-vue')['Avatar']
-    AButton: typeof import("@arco-design/web-vue")["Button"];
-    ACheckbox: typeof import("@arco-design/web-vue")["Checkbox"];
+    AButton: typeof import('@arco-design/web-vue')['Button']
+    ACheckbox: typeof import('@arco-design/web-vue')['Checkbox']
     ACol: typeof import('@arco-design/web-vue')['Col']
-    AForm: typeof import("@arco-design/web-vue")["Form"];
-    AFormItem: typeof import("@arco-design/web-vue")["FormItem"];
-    AInput: typeof import("@arco-design/web-vue")["Input"];
-    AInputPassword: typeof import("@arco-design/web-vue")["InputPassword"];
+    AForm: typeof import('@arco-design/web-vue')['Form']
+    AFormItem: typeof import('@arco-design/web-vue')['FormItem']
+    AInput: typeof import('@arco-design/web-vue')['Input']
+    AInputPassword: typeof import('@arco-design/web-vue')['InputPassword']
     ARow: typeof import('@arco-design/web-vue')['Row']
     ATabPane: typeof import('@arco-design/web-vue')['TabPane']
     ATabs: typeof import('@arco-design/web-vue')['Tabs']
