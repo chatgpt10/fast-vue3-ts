@@ -1,5 +1,6 @@
 <template>
 	<div class="navTop">
+		<icon-sun-fill size="30px" @click="toggleDark()" />
 		<div class="userInfo">
 			<span style="margin-left: 60px; color: #165dff; font-weight: 600" @click="btnLogout">退出登录</span>
 			<Weather />
@@ -12,7 +13,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<a-tabs default-active-key="1" type="rounded" @tab-click="TabClick">
+		<a-tabs default-active-key="1" type="rounded" @tab-click="TabClick(e)">
 			<a-tab-pane key="1" title="Tab 1">
 				<template #title>Home</template>
 				<Transition name="fade" :appear="true">
@@ -35,6 +36,8 @@ import home from "./components/Home/index.vue";
 // import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
 import { useRouter } from "vue-router";
+// 工具库
+import { useDark, useToggle } from "@vueuse/core";
 const useUser = useUserStore();
 const router = useRouter();
 const avatarUrl = useUser.$state.avatar;
@@ -56,6 +59,21 @@ function TabClick(e: number) {
 		transitionHome.value = false;
 	}
 }
+// 主题更换
+const isDark = useDark({
+	selector: "body",
+	attribute: "arco-theme",
+	valueDark: "dark",
+	valueLight: "light",
+	storageKey: "arco-theme"
+	// onChanged(dark: boolean) {
+	// 	// overridden default behavior
+	// 	appStore.toggleTheme(dark);
+	// }
+});
+console.log(isDark);
+
+const toggleDark = useToggle(isDark);
 </script>
 
 <style scoped lang="less">
@@ -104,6 +122,10 @@ function TabClick(e: number) {
 				left: -110px;
 			}
 		}
+	}
+	.arco-icon {
+		margin: 20px 10px 0 0;
+		cursor: pointer;
 	}
 }
 

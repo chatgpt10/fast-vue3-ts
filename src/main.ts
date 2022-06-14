@@ -11,16 +11,18 @@ pinia.use(piniaPersist);
 // UI库 ardo.design
 import ArcoVue from "@arco-design/web-vue";
 import "@arco-design/web-vue/dist/arco.css";
+import ArcoVueIcon from "@arco-design/web-vue/es/icon";
 // svg封装插件
 import SvgIcon from "@/components/SvgIcon.vue";
 import "virtual:svg-icons-register";
 // 动画文件
 import "animate.css";
 createApp(App)
-  .use(router)
-  .use(pinia)
-  .component("svg-icon", SvgIcon)
-  .use(ArcoVue, {
-    componentPrefix: "arco",
-  })
-  .mount("#app");
+	.use(router)
+	.use(pinia)
+	.use(ArcoVueIcon)
+	.component("svg-icon", SvgIcon)
+	.use(ArcoVue, {
+		componentPrefix: "arco"
+	})
+	.mount("#app");
