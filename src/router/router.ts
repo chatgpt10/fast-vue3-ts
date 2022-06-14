@@ -2,41 +2,51 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import { isLogin } from "@/utils/auth";
 import { Message } from "@arco-design/web-vue";
 const routes: RouteRecordRaw[] = [
-  {
-    path: "/",
-    name: "Home",
-    component: () => import("@/pages/Home/index.vue"), // 注意这里要带上 文件后缀.vue
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: () => import("@/pages/Login/index.vue"), // 注意这里要带上 文件后缀.vue
-  },
-  {
-    path: "/test",
-    name: "Test",
-    component: () => import("@/pages/Test/index.vue"), // 注意这里要带上 文件后缀.vue
-  },
+	{
+		path: "/",
+		name: "Home",
+		component: () => import("@/pages/Home/index.vue") // 注意这里要带上 文件后缀.vue
+	},
+	{
+		path: "/login",
+		name: "Login",
+		component: () => import("@/pages/Login/index.vue") // 注意这里要带上 文件后缀.vue
+	},
+	{
+		path: "/test",
+		name: "Test",
+		component: () => import("@/pages/Test/index.vue") // 注意这里要带上 文件后缀.vue
+	},
+	{
+		path: "/404",
+		name: "404",
+		component: () => import("@/components/errorPages/404.vue") // 注意这里要带上 文件后缀.vue
+	},
+	{
+		// 找不到路由重定向到404页面
+		path: "/:pathMatch(.*)",
+		redirect: "/404"
+	}
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+	history: createWebHistory(),
+	routes
 });
 // 路由守卫
 router.beforeEach((to, from, next) => {
-  // eslint-disable-next-line eqeqeq
-  if (to.path == "/login" || to.path == "/register") {
-    next();
-  } else {
-    // eslint-disable eqeqeq
-    if (isLogin()) {
-      next();
-    } else {
-      next("/login");
-      Message.warning("Token失效,请重新登录!");
-    }
-  }
+	// eslint-disable-next-line eqeqeq
+	if (to.path == "/login" || to.path == "/register") {
+		next();
+	} else {
+		// eslint-disable eqeqeq
+		if (isLogin()) {
+			next();
+		} else {
+			next("/login");
+			Message.warning("Token失效,请重新登录!");
+		}
+	}
 });
 
 export default router;

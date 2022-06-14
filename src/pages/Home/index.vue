@@ -31,7 +31,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import home from "./components/home/index.vue";
+import home from "./components/Home/index.vue";
 // import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
 import { useRouter } from "vue-router";
