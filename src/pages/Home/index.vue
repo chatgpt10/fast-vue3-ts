@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<a-tabs default-active-key="1" type="rounded" @tab-click="TabClick(e)">
+		<a-tabs default-active-key="1" type="rounded" @tab-click="TabClick">
 			<a-tab-pane key="1" title="Tab 1">
 				<template #title>Home</template>
 				<Transition name="fade" :appear="true">
@@ -51,14 +51,23 @@ function btnLogout() {
 	router.push("/login");
 }
 const transitionHome = ref(true);
-function TabClick(e: number) {
-	if (e == 1) {
+// function TabClick(e: number) {
+// 	console.log(e);
+// 	if (e == 1) {
+// 		transitionHome.value = true;
+// 		console.log(transitionHome.value);
+// 	} else {
+// 		transitionHome.value = false;
+// 	}
+// }
+const TabClick = (key: any) => {
+	if (key == 1) {
 		transitionHome.value = true;
 		console.log(transitionHome.value);
 	} else {
 		transitionHome.value = false;
 	}
-}
+};
 // 主题更换
 const isDark = useDark({
 	selector: "body",
