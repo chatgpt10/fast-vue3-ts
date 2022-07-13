@@ -8,6 +8,9 @@ const pinia = createPinia();
 /// Pinia 数据持久化
 import piniaPersist from "pinia-plugin-persist";
 pinia.use(piniaPersist);
+// 引入ElementPlus
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
 // UI库 ardo.design
 import ArcoVue from "@arco-design/web-vue";
 import "@arco-design/web-vue/dist/arco.css";
@@ -20,6 +23,7 @@ import "animate.css";
 createApp(App)
 	.use(router)
 	.use(pinia)
+	.use(ElementPlus)
 	.use(ArcoVueIcon)
 	.component("svg-icon", SvgIcon)
 	.use(ArcoVue, {

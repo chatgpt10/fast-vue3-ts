@@ -21,7 +21,7 @@
 				</Transition>
 			</a-tab-pane>
 			<a-tab-pane key="2" title="Tab 2">
-				<h3>东风破</h3>
+				<slotTemplate />
 			</a-tab-pane>
 			<a-tab-pane key="3">
 				<template #title>Tab 3</template>
@@ -33,6 +33,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import home from "./components/Home/index.vue";
+import slotTemplate from "./components/slot_template/index.vue";
 // import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
 import { useRouter } from "vue-router";
@@ -60,6 +61,7 @@ const transitionHome = ref(true);
 // 		transitionHome.value = false;
 // 	}
 // }
+// 切换tab栏 显示动画效果
 const TabClick = (key: any) => {
 	if (key == 1) {
 		transitionHome.value = true;
