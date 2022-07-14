@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<a-tabs default-active-key="1" type="rounded" @tab-click="TabClick">
+		<a-tabs default-active-key="3" type="rounded" @tab-click="TabClick">
 			<a-tab-pane key="1" title="Tab 1">
 				<template #title>Home</template>
 				<Transition name="fade" :appear="true">
@@ -21,11 +21,10 @@
 				</Transition>
 			</a-tab-pane>
 			<a-tab-pane key="2" title="Tab 2">
-				<slotTemplate />
+				<rate />
 			</a-tab-pane>
-			<a-tab-pane key="3">
-				<template #title>Tab 3</template>
-				<SvgIcon name="heSuan" />
+			<a-tab-pane key="3" title="Tab 3">
+				<tableHooks />
 			</a-tab-pane>
 		</a-tabs>
 	</div>
@@ -33,7 +32,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import home from "./components/Home/index.vue";
-import slotTemplate from "./components/slot_template/index.vue";
+import rate from "./components/rate/index.vue";
+import tableHooks from "./components/tableHooks/index.vue";
 // import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
 import { useRouter } from "vue-router";
@@ -82,7 +82,7 @@ const isDark = useDark({
 	// 	appStore.toggleTheme(dark);
 	// }
 });
-console.log(isDark);
+// console.log(isDark);
 
 const toggleDark = useToggle(isDark);
 </script>

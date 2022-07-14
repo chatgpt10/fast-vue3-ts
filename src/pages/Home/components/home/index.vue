@@ -16,10 +16,7 @@ import { ref } from "vue";
 const cardInfoData = ref();
 async function getCardInfoData() {
 	const { data } = await cardDataApi.cardData();
-	console.log(data);
-
 	cardInfoData.value = data.list;
-	console.log(cardInfoData.value);
 }
 getCardInfoData();
 </script>

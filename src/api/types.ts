@@ -1,7 +1,7 @@
 export interface ILoginParams {
-  username: string;
-  password: string | number;
+	username: string;
+	password: string | number;
 }
 export interface ILoginApi {
-  login: (params: ILoginParams) => Promise<any>;
+	login: (params: ILoginParams) => Promise<any>;
 }

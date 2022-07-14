@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     InfoDescription: typeof import('./src/components/InfoDescription/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Slot_template: typeof import('./src/components/slot_template/index.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
     Weather: typeof import('./src/components/weather/Weather.vue')['default']
   }
