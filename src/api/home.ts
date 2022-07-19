@@ -8,5 +8,14 @@ export const cardDataApi = {
 	},
 	getTableData() {
 		return http.get("/api/getTableData");
+	},
+	tableEdit() {
+		return http.get("/api/tableEdit");
+	},
+	tableChange() {
+		return http.get("/api/tableChange");
+	},
+	tableDelete() {
+		return http.get("/api/getTableData");
 	}
 };
