@@ -18,11 +18,14 @@ import ArcoVueIcon from "@arco-design/web-vue/es/icon";
 // svg封装插件
 import SvgIcon from "@/components/SvgIcon.vue";
 import "virtual:svg-icons-register";
+// 自定义指令
+import directives from "@/directives/index";
 // 动画文件
 import "animate.css";
 createApp(App)
 	.use(router)
 	.use(pinia)
+	.use(directives)
 	.use(ElementPlus)
 	.use(ArcoVueIcon)
 	.component("svg-icon", SvgIcon)

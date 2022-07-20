@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<a-tabs default-active-key="4" type="rounded" @tab-click="TabClick">
+		<a-tabs default-active-key="6" type="rounded" @tab-click="TabClick">
 			<a-tab-pane key="1" title="Tab 1">
 				<template #title>Home</template>
 				<Transition name="fade" :appear="true">
@@ -32,6 +32,9 @@
 			<a-tab-pane key="5" title="内嵌">
 				<ifram />
 			</a-tab-pane>
+			<a-tab-pane key="6" title="directives">
+				<directives />
+			</a-tab-pane>
 		</a-tabs>
 	</div>
 </template>
@@ -42,6 +45,7 @@ import rate from "./components/rate/index.vue";
 import myEcharts from "./components/myEcharts/index.vue";
 import tableHooks from "./components/tableHooks/index.vue";
 import ifram from "./components/ifram/index.vue";
+import directives from "./components/directives/index.vue";
 // import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
 import { useRouter } from "vue-router";
