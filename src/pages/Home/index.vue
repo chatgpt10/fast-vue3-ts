@@ -20,14 +20,17 @@
 					<home v-show="transitionHome" />
 				</Transition>
 			</a-tab-pane>
-			<a-tab-pane key="2" title="Tab 2">
+			<a-tab-pane key="2" title="评分">
 				<rate />
 			</a-tab-pane>
-			<a-tab-pane key="3" title="Tab 3">
+			<a-tab-pane key="3" title="Table">
 				<tableHooks />
 			</a-tab-pane>
-			<a-tab-pane key="4" title="Tab 4">
+			<a-tab-pane key="4" title="Echarts">
 				<myEcharts />
+			</a-tab-pane>
+			<a-tab-pane key="5" title="内嵌">
+				<ifram />
 			</a-tab-pane>
 		</a-tabs>
 	</div>
@@ -38,6 +41,7 @@ import home from "./components/Home/index.vue";
 import rate from "./components/rate/index.vue";
 import myEcharts from "./components/myEcharts/index.vue";
 import tableHooks from "./components/tableHooks/index.vue";
+import ifram from "./components/ifram/index.vue";
 // import Weather from "@/components/weather/Weather.vue";
 import { useUserStore } from "@/store";
 import { useRouter } from "vue-router";
