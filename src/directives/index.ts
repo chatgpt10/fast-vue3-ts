@@ -2,11 +2,13 @@
 import { App } from "vue";
 
 import throttle from "./modules/throttle";
+import debounce from "./modules/debounce";
 
 const directivesList: any = {
 	// Custom directives
 
-	throttle
+	throttle,
+	debounce
 };
 
 const directives = {
