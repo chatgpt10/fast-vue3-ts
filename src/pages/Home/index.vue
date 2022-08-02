@@ -1,6 +1,6 @@
 <template>
 	<div class="navTop">
-		<icon-sun-fill size="30px" @click="toggleDark()" />
+		<icon-sun-fill size="30px" />
 		<div class="userInfo">
 			<span style="margin-left: 60px; color: #165dff; font-weight: 600" @click="btnLogout">退出登录</span>
 			<Weather />
@@ -50,7 +50,6 @@ import directives from "./components/directives/index.vue";
 import { useUserStore } from "@/store";
 import { useRouter } from "vue-router";
 // 工具库
-import { useDark, useToggle } from "@vueuse/core";
 const useUser = useUserStore();
 const router = useRouter();
 const avatarUrl = useUser.$state.avatar;
@@ -83,20 +82,20 @@ const TabClick = (key: any) => {
 	}
 };
 // 主题更换
-const isDark = useDark({
-	selector: "body",
-	attribute: "arco-theme",
-	valueDark: "dark",
-	valueLight: "light",
-	storageKey: "arco-theme"
-	// onChanged(dark: boolean) {
-	// 	// overridden default behavior
-	// 	appStore.toggleTheme(dark);
-	// }
-});
+// const isDark = useDark({
+// 	selector: "body",
+// 	attribute: "arco-theme",
+// 	valueDark: "dark",
+// 	valueLight: "light",
+// 	storageKey: "arco-theme"
+// 	// onChanged(dark: boolean) {
+// 	// 	// overridden default behavior
+// 	// 	appStore.toggleTheme(dark);
+// 	// }
+// });
 // console.log(isDark);
 
-const toggleDark = useToggle(isDark);
+// const toggleDark = useToggle(isDark);
 </script>
 
 <style scoped lang="less">
