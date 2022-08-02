@@ -40,7 +40,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import home from "./components/Home/index.vue";
+import home from "./components/home/index.vue";
 import rate from "./components/rate/index.vue";
 import myEcharts from "./components/myEcharts/index.vue";
 import tableHooks from "./components/tableHooks/index.vue";
