@@ -4,18 +4,18 @@ import http from "@/service/http";
 
 export const cardDataApi = {
 	cardData() {
-		return http.get("/api/card_data");
+		return http.get("/card_data");
 	},
 	getTableData() {
-		return http.get("/api/getTableData");
+		return http.get("/getTableData");
 	},
 	tableEdit() {
-		return http.get("/api/tableEdit");
+		return http.get("/tableEdit");
 	},
 	tableChange() {
-		return http.get("/api/tableChange");
+		return http.get("/tableChange");
 	},
 	tableDelete() {
-		return http.get("/api/getTableData");
+		return http.get("/getTableData");
 	}
 };
