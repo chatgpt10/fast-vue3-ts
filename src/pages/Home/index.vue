@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<a-tabs default-active-key="6" type="rounded" @tab-click="TabClick">
+		<a-tabs default-active-key="1" type="rounded" @tab-click="TabClick">
 			<a-tab-pane key="1" title="Tab 1">
 				<template #title>Home</template>
 				<Transition name="fade" :appear="true">

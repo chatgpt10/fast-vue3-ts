@@ -53,7 +53,7 @@ function getWeatherName() {
 
 <style lang="less" scoped>
 .weatherContainer {
-	width: 300px;
+	width: 314px;
 	z-index: 99;
 }
 </style>
